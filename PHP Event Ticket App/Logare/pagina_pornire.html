@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDX EVENTS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        .content {
+            background-image: url('../TEDX.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 700px;
+        }
+
+        .login-container {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+
+        .dropdown {
+            display: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 120px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .dropdown li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .login-container:hover .dropdown {
+            display: block;
+        }
+
+        .signin {
+            background-color: #ffffff;
+            color: black;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .login-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .admin-button {
+            background-color: #8e44ad;
+        }
+
+        .user-button {
+            background-color: #3498db;
+        }
+
+        .login-as {
+            margin-top: 10px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+           width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TEDX EVENTS</h1>
+</header>
+
+<nav>
+    <a href="home.php">Acasa</a>
+    <a href="../Evenimente/Vizualizare_guest.php">Evenimente</a>
+    <a href="../Parteneri/Vizualizare_guest.php">Parteneri</a>
+    <a href="../Speakeri/Vizualizare_guest.php">Speakeri</a>
+    <a href="../Sponsori/Vizualizare_guest.php">Sponsori</a>
+</nav>
+
+<div class="content"></div>
+
+<div class="login-container" onmouseover="showDropdown()" onmouseleave="hideDropdown()">
+    <div class="signin">LOGIN AS</div>
+    <ul class="dropdown" id="dropdownList">
+        <li><a href="index_admin.php?tip_utilizator=admin" class="login-button admin-button">Admin</a></li>
+        <li><a href="index_user.php?tip_utilizator=utilizator" class="login-button user-button">User</a></li>
+    </ul>
+</div>
+
+<script>
+    function showDropdown() {
+        var dropdownList = document.getElementById('dropdownList');
+        dropdownList.style.display = 'block';
+    }
+
+    function hideDropdown() {
+        var dropdownList = document.getElementById('dropdownList');
+        dropdownList.style.display = 'none';
+    }
+</script>
+
+<div class="footer">
+    <p>&copy; 2023 TEDX Events. All rights reserved.</p>
+</div>
+
+</body>
+</html>
